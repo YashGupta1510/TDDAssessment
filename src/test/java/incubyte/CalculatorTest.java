@@ -12,7 +12,18 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void shouldAddMultipleNumbers() {
+	public void shouldWorkWithSingleNumber() {
+		assertEquals(3, Calculator.sum("3"));
+	}
+	
+	@Test
+	public void shouldAddMultipleNumbersWithCommaDelimiter() {
 		assertEquals(6, Calculator.sum("3,3"));
+		assertEquals(9, Calculator.sum("3,3,3"));
+	}
+	
+	@Test
+	public void shouldWorkWithNewLineAsDelimiter() {
+		assertEquals(9, Calculator.sum("3\n3\n3"));
 	}
 }
