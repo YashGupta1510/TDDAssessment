@@ -45,4 +45,13 @@ public class CalculatorTest {
 			assertEquals("negative numbers not allowed -3", ex.getMessage());
 		}
 	}
+	
+	@Test
+	public void shouldNotAllowMultipleNegativeNumbers() {
+		try {
+			Calculator.sum("1,-2,-3");
+		}catch (RuntimeException ex){
+			assertEquals("negative numbers not allowed -3", ex.getMessage());
+		}
+	}
 }
