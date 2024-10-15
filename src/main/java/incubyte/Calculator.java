@@ -4,6 +4,21 @@ import java.util.stream.IntStream;
 
 public class Calculator {
 
+	/*
+	 * The Function sum takes a string of numbers as input and 
+	 * returns the sum as the result.
+	 * 
+	 * Step 1:
+	 * Check for an Empty string
+	 * Step 2:
+	 * Set the Delimiter
+	 * Step 3:
+	 * Split the String into Tokens and Convert it into valid integers
+	 * Step 4:
+	 * Return the total sum
+	 *  
+	 * */
+	
 	public static int sum(String numbers) {
 		int nums[] = splitNumbers(numbers);
 		int sum = IntStream.of(nums).sum();
@@ -39,6 +54,9 @@ public class Calculator {
 		int nums[] = new int[tokens.length];
 		for (int i = 0; i < tokens.length; i++) {
 			nums[i] = Integer.parseInt(tokens[i]);
+			if(nums[i] < 0) {
+				throw new RuntimeException("negative numbers not allowed " + nums[i]);
+			}
 		}
 		return nums;
 	}

@@ -36,4 +36,13 @@ public class CalculatorTest {
 	public void shouldWorkWithCustomDelimiterOfLength() {
 		assertEquals(6, Calculator.sum("//--\n1--2--3"));
 	}
+	
+	@Test
+	public void shouldNotAllowNegativeNumbers() {
+		try {
+			Calculator.sum("1,2,-3");
+		}catch (RuntimeException ex){
+			assertEquals("negative numbers not allowed -3", ex.getMessage());
+		}
+	}
 }
