@@ -26,4 +26,14 @@ public class CalculatorTest {
 	public void shouldWorkWithNewLineAsDelimiter() {
 		assertEquals(9, Calculator.sum("3\n3\n3"));
 	}
+	
+	@Test
+	public void shouldWorkWithCustomDelimiter() {
+		assertEquals(3, Calculator.sum("//;\n1;2"));
+	}
+	
+	@Test
+	public void shouldWorkWithCustomDelimiterOfLength() {
+		assertEquals(6, Calculator.sum("//--\n1--2--3"));
+	}
 }
